@@ -1,79 +1,110 @@
-const productBody = document.querySelector('.product-body')
-const totalProducts = ''
-
-window.onload = function (){
-    products.forEach(product => {
-    const productBody = document.querySelector('.product-body')
-
-    const div = document.createElement('div')
-    div.className = 'col-3 mb-5'
-    productBody.append(div)
-
-    const divClothCard = document.createElement('div')
-    divClothCard.className = 'cloth-card'
-    div.append(divClothCard)
-
-    const divCard = document.createElement('div')
-    divCard.className = 'card'
-    divCard.style.width = '18rem'
-    divCard.style.borderRadius = '30px'
-    divClothCard.append(divCard)
-
-    const clothImage = document.createElement('img')
-    clothImage.className = "card-img-top p-3"
-    clothImage.alt = 'cloth image'
-    clothImage.src = '/img/products/f1.jpg'
-    clothImage.style.borderRadius = '30px'
-    divCard.append(clothImage)
-
-    const imageDiv = document.createElement('div')
-    imageDiv.className = 'card-body'
-    divCard.append(imageDiv)
-
-    const cardTitle = document.createElement('p')
-    cardTitle.className = 'card-title fw-lighter pt-0'
-    cardTitle.style.fontFamily = 'Mukta'
-    cardTitle.style.lineHeight = '1px'
-    cardTitle.innerText = product.brandName
-    imageDiv.append(cardTitle)
-
-    const cardTitle2 = document.createElement('p')
-    cardTitle2.className = 'cart-title pt-0'
-    cardTitle2.innerText = product.titleName
-    imageDiv.append(cardTitle2)
-
-    const cardTitleDiv = document.createElement('div')
-    cardTitleDiv.className = 'row'
-    imageDiv.append(cardTitleDiv)
-
-    const cardTitleDiv2 = document.createElement('div')
-    cardTitleDiv2.className = 'col-9 pt-2'
-    cardTitleDiv.append(cardTitleDiv2)
-
-    const ratingImage = document.createElement('img')
-    ratingImage.src = `../Images/ratings/rating-${product.rating.stars * 10}.png`
-    ratingImage.className = 'row ps-2'
-    ratingImage.style.width = '100px'
-    ratingImage.style.lineHeight = '1px'
-    cardTitleDiv2.append(ratingImage)
-
-    const priceLine = document.createElement('div')
-    priceLine.className = 'row pt-2 ps-2'
-    priceLine.style.fontFamily = 'Mukta'
-    priceLine.innerText = product.priceCents
-    cardTitleDiv2.append(priceLine)
-
-    const cartButton = document.createElement('button')
-    cartButton.className = 'col-3 btn btn-bg-white px-3'
-    cartButton.style.borderRadius = '30px'
-    cartButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="56" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">' +
-    '<path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>' +
-    '<path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>' +
-    '</svg>'
-    cardTitleDiv.append(cartButton)
-  });
+window.onload = function() {
+  let obj = JSON.parse(localStorage.getItem('cartItem'))
+  let cartNo = document.querySelector('.cart-value-js')
+  cartNo.innerText = obj.length
+  let popUp = document.querySelector('.pop-up');
+  popUp.classList.add('class', 'hide');
 }
 
+let cartItems2 = JSON.parse(localStorage.getItem('cartItem'));
+let prouctsInCart = '';
+let orderCount = 0;
+let orderTotalCost = 0;
+setCart();
 
+function setCart() {
+cartItems2.forEach(element => {
 
+  orderCount += 1;
+  orderTotalCost += Number(element.priceCents)
+  console.log(element.image)
+
+  prouctsInCart = prouctsInCart + `
+  <div class="row border m-2">
+      <div class="row m-2 delivery-date">
+        Delivery Date: ${element.titleName} June
+      </div>
+      <div class="row mb-3 mx-3 mt-3">
+        <div class="col">
+          <img class="product-image-size" src=${element.image} alt="">
+        </div>
+        <div class="col">
+          <p class="product-content">${element.titleName}</p>
+          <p class="product-content">Rs ${element.priceCents}</p>
+        </div>
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              <p class="product-content-date">Delivery june ${element.titleName} <br>+ 40 Rs</p>
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              <p class="product-content-date">Delivery june ${element.titleName} <br>+ 60 Rs</p>
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              <p class="product-content-date">Delivery june ${element.titleName} <br>+ 80 Rs</p>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  `
+});
+}
+
+const tot = orderTotalCost
+if (orderTotalCost == 0) {
+  tot = 0
+}
+
+const cartProducts = document.querySelector('.cart-products')
+cartProducts.innerHTML = prouctsInCart
+
+const itemCount = document.querySelector('.item-count')
+itemCount.innerText = orderCount
+
+const itemTotal = document.querySelector('.total-cost')
+itemTotal.innerText = orderTotalCost
+
+const shipCost = document.querySelector('.ship-cost')
+if (orderTotalCost == 0) {
+  shipCost.innerText = 0
+}
+else {
+  shipCost.innerText = 70
+}
+
+const shippingTotal = document.querySelector('.shipping-total')
+shippingTotal.innerText = tot
+
+const tax = document.querySelector('.tax')
+tax.innerText = (tot) * 0.1
+
+const total = document.querySelector('.total-cost-2')
+total.innerHTML = ((tot) * 0.1) + (tot)
+
+function orderButtonClicked() {
+  let obj = []
+  localStorage.setItem('cartItem', JSON.stringify(obj))
+  let cartNo = document.querySelector('.cart-value-js')
+  cartNo.innerText = '0'
+  openPop();
+}
+
+function openPop() {
+  let popUp2 = document.querySelector('.pop-js');
+  popUp2.classList.remove('hide');
+}
+
+function popUpClose() {
+  let popUp2 = document.querySelector('.pop-js');
+  popUp2.classList.add('hide');
+}
 

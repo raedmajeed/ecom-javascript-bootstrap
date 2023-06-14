@@ -1,28 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Document</title>
-  <link rel="stylesheet" href="shop-page.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Mukta:wght@200;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Mada:wght@200&family=Mukta:wght@200;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="cart-page.css">
+  <link rel="stylesheet" href="home-page.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
+  <title>Checkout</title>
 </head>
 <body>
-  <div class="container feature-product-container" style="margin-top: 100px;">
-    <p class="text-center" style="font-size: 60px; font-family: 'Mukta'; line-height: 20px;">Featured Products</p>
-    <p class="fw-lighter text-center my-5">New Trendy Summer Collections</p>
-    <div class="row product-body product-card-js"> 
 
-      <button class="col-3 btn btn-bg-white px-3 add-button" data-product-name=${products[i]} style="border-radius: 30px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="56" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
-          <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
-          <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-        </svg>
-      </button>
+    
+  
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-expand-md border-bottom sticky-top bg-white">
+      <div class="container-fluid">
+        <div class="col-3 text-start mx-2">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="home-page.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/shop-page.html" class="nav-link">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link">About Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 text-center">
+          <img src="/Images/logo.png" alt="" class="navbar-brand">
+        </div>
+        <div class="col text-end">
+          <ul class="navbar-nav justify-content-end">
+            <li class="nav-item">
+              <button class="btn btn-light bg-white nav-link position-relative">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                </svg>
+              </button>
+              <p class="cart-value-js" style="display: inline-block; position:absolute;
+              top: 10px; right: 40px;"></p>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+    </nav>
 
-
+    <p class="text-center m-4 checkout-style">Checkout</p>
+    <div class="row mx-5">
+      <div class="col-lg-8">
+        <div class="row cart-products"></div>
+      </div>
+      
+      <div class="col text-center border ms-5 mt-1 order-tab" style="height: 450px;">
+        <p class="text-center mt-4">Order Summary</p>
+        <div class="row border-bottom text-start">
+          <div class="col">
+            <p>Items (<span class="item-count"></span>)</p>
+            <p>Shipping: </p>
+            <p>Total Before Tax: </p>
+            <p>Estimated Tax (10%): </p>
+          </div>
+          <div class="col text-end">
+            <p class="total-cost"></p>
+            <p class="ship-cost"></p>
+            <p class="shipping-total"></p>
+            <p class="tax"></p>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col text-start">
+            <p>Order Total</p>
+          </div>
+          <div class="col text-end total-cost-2"></div>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg mt-5" onclick="orderButtonClicked()">Large button</button>
+      </div>
     </div>
-  </div>
-  <script src="test.js"></script>
-  <script src="Data/product.js"></script>
+
+    <div class="pop-up pop-js">
+      <button type="button" class="btn-close text-end m-5" aria-label="Close" onclick="popUpClose()">
+      </button>
+      <p class="text-center fw-100" style="font-size: 20px; font-weight: 100;">ORDER PLACED</p>
+      <div class="text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+      </svg>
+      </div>
+      <a href="home-page.html"><p class="text-center fw-100 mt-5" style="font-size: 20px; font-weight: 100; text-decoration: none;">GO HOME</p></a>
+    </div>
+
+
+    <script src="cart-page.js"></script>
 </body>
 </html>

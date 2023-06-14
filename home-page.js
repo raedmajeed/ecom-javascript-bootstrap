@@ -71,6 +71,7 @@ for (var i=0; i < products.length; i++) {
   cartButton.className = `col-3 btn btn-bg-white px-3 add-button`;
   cartButton.setAttribute('data-product-name', products[i].brandName)
   cartButton.setAttribute('data-product-price', products[i].priceCents)
+  cartButton.setAttribute('data-product-image', products[i].image)
   cartButton.style.borderRadius = '30px'
   cartButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="56" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">' +
   '<path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>' +
@@ -95,7 +96,8 @@ document.querySelectorAll('.add-button')
       let obj = JSON.parse(localStorage.getItem('cartItem'))
       obj.push({
         titleName: button.dataset.productName ,
-        priceCents: button.dataset.productPrice
+        priceCents: button.dataset.productPrice,
+        image: button.dataset.image
       })
       console.log(obj)
       let setObj = JSON.stringify(obj)
