@@ -1,0 +1,12 @@
+.hide {
+  display: none;
+}
+
+.active {
+  background-color: blue;
+}
+
+.sticky-sidebar {
+  position: absolute;
+  top:90px;
+}

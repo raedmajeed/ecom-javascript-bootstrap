@@ -1,0 +1,55 @@
+
+#preloader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  z-index: 100;
+}
+
+.banner-image {
+  height: 600px;
+  width: 1340px;
+  margin-right: 10px;
+  left: 50px;
+  top: 134px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(252, 203, 144, 0.44) 0%, rgba(255, 154, 158, 0.38) 100%);
+
+}
+
+.banner-image-heading {
+  height: 23px;
+  width: 259px;
+  left: 156px;
+  top: 256px;
+  border-radius: 0;
+  font-family: 'Mada';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 20px;
+} 
+
+.banner-image-text {
+  height: 109px;
+  width: 477px;
+  left: 155px;
+  top: 304px;
+  border-radius: 0;
+  font-family: 'Aclonica';
+  font-size: 114px;
+  font-weight: 400;
+  line-height: 129px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+
+.stats-container {
+  background: linear-gradient(180deg, rgba(252, 203, 144, 0.15) 0%, rgba(255, 185, 188, 0.1) 61.91%);
+  /* height: 300px; */
+}
