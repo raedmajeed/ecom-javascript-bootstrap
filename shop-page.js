@@ -1,3 +1,5 @@
+  // THIS LOOP ADDS THE PRODUCT DYNAMICALLY
+  
   products.forEach(product => {
     const productBody = document.querySelector('.product-body')
 
@@ -72,6 +74,9 @@
     cardTitleDiv.append(cartButton)
   });
 
+
+// THIS FUNCTION FILTERS THE PRODUCTS BASED ON THE CATEGORY
+
 function filterProduct(value){
   let productDetails = document.querySelectorAll(".product-card-div")
   let title = document.querySelector('.feature-title')
@@ -94,6 +99,7 @@ function filterProduct(value){
   })
 }
 
+// WORKS WHEN THE WINDOW LOADS
 
 window.onload = function() {
   filterProduct('ALL')
@@ -104,6 +110,9 @@ window.onload = function() {
   const navButton = document.querySelector('.nav-pop-up')
   navButton.classList.add('hide')
 }
+
+// LOOPING THROUGH BUTTON ELE TO CAPTURE THE PRODUCT BUTTON CLICKED
+// AND TO PUSH THE PRODUCT TO localstorage()
 
 document.querySelectorAll('.add-button')
   .forEach(button => {
@@ -123,7 +132,9 @@ document.querySelectorAll('.add-button')
     })
   })
 
-  function navButtonClicked() {
+// FUNCTION TO KEEP TAB THE NAVBUTTON CLICKED
+
+function navButtonClicked() {
     const navButton = document.querySelector('.nav-pop-up')
     navButton.classList.toggle('hide')
   }

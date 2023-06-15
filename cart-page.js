@@ -7,6 +7,7 @@ window.onload = function() {
   cartNo.innerText = obj.length
   let popUp = document.querySelector('.pop-up');
   popUp.classList.add('class', 'hide');
+  
   if (obj.length == 0) {
     disableButton();
   }
@@ -125,12 +126,15 @@ function orderButtonClicked() {
   disableButton()
 }
 
+// FUNCTIO TO CLOSE THE POP UP BOX
 
 function popUpClose() {
   let popUp2 = document.querySelector('.pop-js');
   popUp2.classList.add('hide');
   location.reload()
 }
+
+// FUNCTION TO ACTIVATE NAV BUTTON FOR SMALLER SCREEN SIZE
 
 function navButtonClicked() {
   const navButton = document.querySelector('.nav-pop-up')
