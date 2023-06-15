@@ -3,12 +3,15 @@
 window.onload = function() {
   let obj = JSON.parse(localStorage.getItem('cartItem'))
 
-  // --- UNCOMMENT TO EMPTY THE CART ---
+  // --- UNCOMMENT AND SAVE TO EMPTY THE CART ---
   // obj = []
   // localStorage.setItem('cartItem', JSON.stringify(obj))
 
   let cartNo = document.querySelector('.cart-value-js')
   cartNo.innerText = obj.length
+
+  const navButton = document.querySelector('.nav-pop-up')
+  navButton.classList.add('hide')
 }
 
 // FUNCTION TO SET FORCED LOADING CIRCLE
@@ -115,3 +118,8 @@ document.querySelectorAll('.add-button')
       cartNo.innerText = obj2.length
     })
   })
+
+  function navButtonClicked() {
+    const navButton = document.querySelector('.nav-pop-up')
+    navButton.classList.toggle('hide')
+  }

@@ -10,6 +10,9 @@ window.onload = function() {
   if (obj.length == 0) {
     disableButton();
   }
+
+  const navButton = document.querySelector('.nav-pop-up')
+  navButton.classList.add('hide')
 }
 
 // FUNCTION TO DISABLE THE ORDER-NOW BUTTON
@@ -126,5 +129,11 @@ function orderButtonClicked() {
 function popUpClose() {
   let popUp2 = document.querySelector('.pop-js');
   popUp2.classList.add('hide');
+  location.reload()
+}
+
+function navButtonClicked() {
+  const navButton = document.querySelector('.nav-pop-up')
+  navButton.classList.toggle('hide')
 }
 

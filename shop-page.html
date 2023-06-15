@@ -9,6 +9,15 @@
   <title>SHOP</title>
 </head>
 <body>
+
+  <!-- NAV POP UP -->
+  <div class="nav-pop-up">
+    <div class="col text-end p-5">
+      <div class="row mt-5"><a href="shop-page.html" class="nav-bt">SHOP</a></div>
+      <div class="row mt-5"><a href="" class="nav-bt">CONTACT</a></div>
+      <div class="row mt-5"><a href="cart-page.html"  class="nav-bt">CART</a></div>
+    </div>
+  </div>
   
     <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-expand-sm navbar-expand-md border-bottom sticky-top bg-white">
@@ -18,10 +27,10 @@
       <div class="col-lg-3 col-sm-6 text-start mx-2">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="home-page.html" class="nav-link">Home</a>
+            <a href="#" class="nav-link border-bottom bg">Home</a>
           </li>
           <li class="nav-item">
-            <a href="/shop-page.html" class="nav-link border-bottom bg">Shop</a>
+            <a href="/shop-page.html" class="nav-link">Shop</a>
           </li>
           <li class="nav-item">
             <a href="" class="nav-link">Contact</a>
@@ -30,29 +39,27 @@
       </div>
     </div>
       
-      <div class="col-6 text-center">
-        <img src="/Images/logo.png" alt="" class="navbar-brand">
-      </div>
-
-      
+    <div class="col-6 text-center">
+      <img src="/Images/logo.png" alt="" class="navbar-brand">
+    </div>
 
     <div class="collapse navbar-collapse"> 
       <div class="col text-end">
         <ul class="navbar-nav justify-content-end">
-          <li class="nav-item">
-            <a href="cart-page.html"><button class="btn btn-light bg-white nav-link position-relative">
+          <li class="nav-item position-relative">
+            <a href="cart-page.html"><button class="btn btn-light bg-white nav-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
               </svg>
             </button></a>
             <p class="cart-value-js" style="display: inline-block; position:absolute;
-            top: 10px; right: 40px;"></p>
+            top: 2px; right: 30px; color: darkblue;"></p>
           </li>
         </ul>
       </div>
     </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#coll">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#coll" onclick="navButtonClicked()" id="nav-button">
       <span class="navbar-toggler-icon"></span>
      </button>
 

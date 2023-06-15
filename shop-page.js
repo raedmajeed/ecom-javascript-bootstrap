@@ -100,6 +100,9 @@ window.onload = function() {
   let obj = JSON.parse(localStorage.getItem('cartItem'))
   let cartNo = document.querySelector('.cart-value-js')
   cartNo.innerText = obj.length
+
+  const navButton = document.querySelector('.nav-pop-up')
+  navButton.classList.add('hide')
 }
 
 document.querySelectorAll('.add-button')
@@ -119,3 +122,8 @@ document.querySelectorAll('.add-button')
       cartNo.innerText = obj2.length
     })
   })
+
+  function navButtonClicked() {
+    const navButton = document.querySelector('.nav-pop-up')
+    navButton.classList.toggle('hide')
+  }
