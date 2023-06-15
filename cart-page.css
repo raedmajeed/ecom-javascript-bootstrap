@@ -45,3 +45,34 @@
 .hide {
   display: none;
 }
+
+#orderButton {
+  background-color: darkgray;
+  color: black;
+  border: antiquewhite;
+}
+
+
+@media screen and (max-width: 550px) {
+  .right-cont {
+    margin-right: 60px !important;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .right-cont {
+    margin-right: 80px !important;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .right-cont {
+    margin-right: 50px !important;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .right-cont {
+    margin-right: 50px !important;
+  }
+}

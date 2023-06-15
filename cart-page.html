@@ -55,36 +55,48 @@
     <!-- CHECKOUT AND ORDER PAGE CONTENTS -->
     
     <p class="text-center m-4 checkout-style">Checkout</p>
-    <div class="row mx-5">
+    <div class="container">
+    <div class="row">
+      
+      <!-- ADDING TO CART HAPPENS HERE -->
       <div class="col-lg-8">
         <div class="row cart-products"></div>
       </div>
       
-      <div class="col text-center border ms-5 mt-1 order-tab" style="height: 450px;">
-        <p class="text-center mt-4">Order Summary</p>
-        <div class="row border-bottom text-start">
-          <div class="col">
-            <p>Items (<span class="item-count"></span>)</p>
-            <p>Shipping: </p>
-            <p>Total Before Tax: </p>
-            <p>Estimated Tax (10%): </p>
-          </div>
-          <div class="col text-end">
-            <p class="total-cost"></p>
-            <p class="ship-cost"></p>
-            <p class="shipping-total"></p>
-            <p class="tax"></p>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col text-start">
-            <p>Order Total</p>
-          </div>
-          <div class="col text-end total-cost-2"></div>
-        </div>
-        <button type="button" class="btn btn-primary btn-lg mt-5 order-button" onclick="orderButtonClicked()" id="orderButton">PLACE ORDER</button>
+      <!-- CART ADDING HAPPENS HERE -->
+      <div class="col-lg-4">
+        <!-- Right side content -->
+        <div class="row">
+            <div class="right-cont col text-center border ms-5 mt-1 order-tab" style="height: 450px;">
+              <p class="text-center mt-4">Order Summary</p>
+              <div class="row border-bottom text-start">
+                <div class="col">
+                  <p>Items (<span class="item-count"></span>)</p>
+                  <p>Shipping: </p>
+                  <p>Total Before Tax: </p>
+                  <p>Estimated Tax (10%): </p>
+                </div>
+                <div class="col text-end">
+                  <p class="total-cost"></p>
+                  <p class="ship-cost"></p>
+                  <p class="shipping-total"></p>
+                  <p class="tax"></p>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col text-start">
+                  <p>Order Total</p>
+                </div>
+                <div class="col text-end total-cost-2"></div>
+              </div>
+              <button type="button" class="btn btn-primary btn-lg mt-5 order-button-1" onclick="orderButtonClicked()" id="orderButton">
+                PLACE ORDER
+              </button>
+            </div>
+            </div>
       </div>
     </div>
+  </div>
 
     <!-- ORDER PLACED POP UP CONTENT -->
     

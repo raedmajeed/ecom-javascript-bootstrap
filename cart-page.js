@@ -1,3 +1,6 @@
+// THIS FUNCTION WORKS ON PAGE LOAD 
+// HERE CART NUMBER IS UPDATED AS WELL AS BUTTON DISABLED IF CART EMPTY
+
 window.onload = function() {
   let obj = JSON.parse(localStorage.getItem('cartItem'))
   let cartNo = document.querySelector('.cart-value-js')
@@ -8,6 +11,8 @@ window.onload = function() {
     disableButton();
   }
 }
+
+// FUNCTION TO DISABLE THE ORDER-NOW BUTTON
 
 function disableButton() {
   var orderButton = document.getElementById('orderButton');
@@ -20,6 +25,8 @@ let orderCount = 0;
 let orderTotalCost = 0;
 setCart();
 
+// FUNCTION TO RENTER CART ITEMS DYNAMICALLY
+
 function setCart() {
 cartItems2.forEach(element => {
 
@@ -27,6 +34,7 @@ cartItems2.forEach(element => {
   orderTotalCost += Number(element.priceCents)
 
   prouctsInCart = prouctsInCart + `
+  <div class="col-12 mb-3">
   <div class="row border m-2">
       <div class="row m-2 delivery-date">
         Delivery Date: ${element.titleName} June
@@ -62,9 +70,12 @@ cartItems2.forEach(element => {
       </div>
     </div>
     </div>
+    </div>
   `
 });
 }
+
+// CART VALUE ARE ADDED AND COUNTED BELOW
 
 const tot = orderTotalCost
 if (orderTotalCost == 0) {
@@ -98,6 +109,8 @@ tax.innerText = ((tot) * 0.1).toFixed(2)
 
 const total = document.querySelector('.total-cost-2')
 total.innerHTML = ((tot) * 0.1) + (tot)
+
+// FUNCTION WHEN ORDER NOW BUTTON CLICKED
 
 function orderButtonClicked() {
   let obj = []

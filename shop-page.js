@@ -18,7 +18,7 @@
     const clothImage = document.createElement('img')
     clothImage.className = "card-img-top p-3"
     clothImage.alt = 'cloth image'
-    clothImage.src = '/img/products/f1.jpg'
+    clothImage.src = product.image
     clothImage.style.borderRadius = '30px'
     divCard.append(clothImage)
 
@@ -109,7 +109,7 @@ document.querySelectorAll('.add-button')
       obj.push({
         titleName: button.dataset.productName ,
         priceCents: button.dataset.productPrice,
-        image: button.dataset.image
+        image: button.dataset.productImage
       })
       console.log(obj)
       let setObj = JSON.stringify(obj)

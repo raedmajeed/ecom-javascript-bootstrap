@@ -105,7 +105,7 @@ document.querySelectorAll('.add-button')
       obj.push({
         titleName: button.dataset.productName ,
         priceCents: button.dataset.productPrice,
-        image: button.dataset.image
+        image: button.dataset.productImage
       })
       console.log(obj)
       let setObj = JSON.stringify(obj)
