@@ -2,7 +2,7 @@ const products = [
   {
     id: "0001",
     category: "MEN",
-    image: "../img/products/f1.jpg",
+    image: "/img/products/f1.jpg",
     titleName: "Men shirt 1",
     brandName: "Allen Solly",
     rating: {
@@ -14,7 +14,7 @@ const products = [
   {
     id: "0002",
     category: "WOMEN",
-    image: "../img/products/f1.jpg",
+    image: "/img/products/f1.jpg",
     titleName: "Woman shirt 1",
     brandName: "Pantaloon",
     rating: {
@@ -26,7 +26,7 @@ const products = [
   {
     id: "0003",
     category: "ALL",
-    image: "../img/products/f1.jpg",
+    image: "/img/products/f1.jpg",
     titleName: "Accessory 1",
     brandName: "Samsung",
     rating: {
@@ -38,7 +38,7 @@ const products = [
   {
     id: "0004",
     category: "MEN",
-    image: "../img/products/f1.jpg",
+    image: "/img/products/f1.jpg",
     titleName: "Men shirt 2",
     brandName: "Vanhuesen",
     rating: {
@@ -50,7 +50,7 @@ const products = [
   {
     id: "0005",
     category: "WOMEN",
-    image: "../img/products/f1.jpg",
+    image: "/img/products/f1.jpg",
     titleName: "Woman shirt 2",
     brandName: "shein",
     rating: {
@@ -62,7 +62,7 @@ const products = [
   {
     id: "0005",
     category: "ALL",
-    image: "../img/products/f1.jpg",
+    image: "/img/products/f1.jpg",
     titleName: "Accessory 2",
     brandName: "App,e",
     rating: {
@@ -71,5 +71,30 @@ const products = [
     },
     priceCents: 2080
   },
+  {
+    id: "0006",
+    category: "WOMEN",
+    image: "/img/products/f1.jpg",
+    titleName: "Woman shirt 2",
+    brandName: "shein",
+    rating: {
+      stars: 2.5,
+      count: 87
+    },
+    priceCents: 870
+  },
+  {
+    id: "0007",
+    category: "MEN",
+    image: "/img/products/f1.jpg",
+    titleName: "Men shirt 3",
+    brandName: "Basics",
+    rating: {
+      stars: 1.5,
+      count: 87
+    },
+    priceCents: 643
+  }
+  
   
 ];

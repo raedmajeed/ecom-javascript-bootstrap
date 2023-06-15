@@ -13,11 +13,10 @@
 
   <title>Checkout</title>
 </head>
-<body>
+  <body>
 
-    
-  
     <!-- NAVBAR -->
+    
     <nav class="navbar navbar-expand-lg navbar-expand-md border-bottom sticky-top bg-white">
       <div class="container-fluid">
         <div class="col-3 text-start mx-2">
@@ -53,6 +52,8 @@
       </div>
     </nav>
 
+    <!-- CHECKOUT AND ORDER PAGE CONTENTS -->
+    
     <p class="text-center m-4 checkout-style">Checkout</p>
     <div class="row mx-5">
       <div class="col-lg-8">
@@ -81,10 +82,12 @@
           </div>
           <div class="col text-end total-cost-2"></div>
         </div>
-        <button type="button" class="btn btn-primary btn-lg mt-5" onclick="orderButtonClicked()">PLACE ORDER</button>
+        <button type="button" class="btn btn-primary btn-lg mt-5 order-button" onclick="orderButtonClicked()" id="orderButton">PLACE ORDER</button>
       </div>
     </div>
 
+    <!-- ORDER PLACED POP UP CONTENT -->
+    
     <div class="pop-up pop-js">
       <button type="button" class="btn-close text-end m-5" aria-label="Close" onclick="popUpClose()">
       </button>
@@ -100,5 +103,5 @@
 
 
     <script src="cart-page.js"></script>
-</body>
+  </body>
 </html>

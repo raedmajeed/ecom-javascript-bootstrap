@@ -2,7 +2,7 @@
     const productBody = document.querySelector('.product-body')
 
     const div = document.createElement('div')
-    div.className = `col-3 mb-5 mx-5 product-card-div ${product.category} hide`
+    div.className = `${product.category} product-card-div col-lg-4 col-md-6 col-sm-12 mb-5 justify-content-center hide`
     productBody.append(div)
 
     const divClothCard = document.createElement('div')
@@ -10,7 +10,7 @@
     div.append(divClothCard)
 
     const divCard = document.createElement('div')
-    divCard.className = 'card'
+    divCard.className = 'card card-hover';
     divCard.style.width = '18rem'
     divCard.style.borderRadius = '30px'
     divClothCard.append(divCard)

@@ -1,5 +1,10 @@
 .hide {
-  display: none;
+  display: none !important;
+}
+
+.product-card-div {
+  display: flex;
+  justify-content: center;
 }
 
 .active {
@@ -9,4 +14,35 @@
 .sticky-sidebar {
   position: absolute;
   top:90px;
+}
+
+.card-hover {
+  transition: 0.2s ease;
+}
+
+.card-hover:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+@media only screen and (max-width: 513px) {
+  
+}
+
+@media only screen and (max-width: 513px) {
+  
+}
+
+@media only screen and (max-width: 513px) {
+  
+}
+
+@media only screen and (max-width: 513px) {
+  
+}
+
+@media only screen and (max-width: 540px) {
+  /* .product-card-div {
+    margin-left: 50px;
+
+  } */
 }

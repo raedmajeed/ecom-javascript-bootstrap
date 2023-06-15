@@ -32,12 +32,13 @@
 }
 
 .pop-up {
-  position:fixed;
+  position: fixed;
   z-index: 101;
-  height: 400px;
-  width: 500px;
-  top: 180px;
-  left: 500px;
+  height: 60%;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: antiquewhite;
 }
 

@@ -4,6 +4,14 @@ window.onload = function() {
   cartNo.innerText = obj.length
   let popUp = document.querySelector('.pop-up');
   popUp.classList.add('class', 'hide');
+  if (obj.length == 0) {
+    disableButton();
+  }
+}
+
+function disableButton() {
+  var orderButton = document.getElementById('orderButton');
+  orderButton.disabled = true;
 }
 
 let cartItems2 = JSON.parse(localStorage.getItem('cartItem'));
@@ -17,7 +25,6 @@ cartItems2.forEach(element => {
 
   orderCount += 1;
   orderTotalCost += Number(element.priceCents)
-  console.log(element.image)
 
   prouctsInCart = prouctsInCart + `
   <div class="row border m-2">
@@ -76,6 +83,8 @@ itemTotal.innerText = orderTotalCost
 const shipCost = document.querySelector('.ship-cost')
 if (orderTotalCost == 0) {
   shipCost.innerText = 0
+  var orderButton = document.getElementById('orderButton');
+  orderButton.disabled = true;
 }
 else {
   shipCost.innerText = 70
@@ -85,7 +94,7 @@ const shippingTotal = document.querySelector('.shipping-total')
 shippingTotal.innerText = tot
 
 const tax = document.querySelector('.tax')
-tax.innerText = (tot) * 0.1
+tax.innerText = ((tot) * 0.1).toFixed(2)
 
 const total = document.querySelector('.total-cost-2')
 total.innerHTML = ((tot) * 0.1) + (tot)
@@ -95,13 +104,11 @@ function orderButtonClicked() {
   localStorage.setItem('cartItem', JSON.stringify(obj))
   let cartNo = document.querySelector('.cart-value-js')
   cartNo.innerText = '0'
-  openPop();
-}
-
-function openPop() {
   let popUp2 = document.querySelector('.pop-js');
   popUp2.classList.remove('hide');
+  disableButton()
 }
+
 
 function popUpClose() {
   let popUp2 = document.querySelector('.pop-js');

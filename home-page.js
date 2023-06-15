@@ -1,14 +1,30 @@
+// FUNCTION TO WORK WHEN THE WEBPAGE LOADS
+
+window.onload = function() {
+  let obj = JSON.parse(localStorage.getItem('cartItem'))
+
+  // --- UNCOMMENT TO EMPTY THE CART ---
+  // obj = []
+  // localStorage.setItem('cartItem', JSON.stringify(obj))
+
+  let cartNo = document.querySelector('.cart-value-js')
+  cartNo.innerText = obj.length
+}
+
+// FUNCTION TO SET FORCED LOADING CIRCLE
+
 var preLoader = document.getElementById("preloader");
 setInterval(() => {
   preLoader.style.display = "none";
 }, 1000)
 
+// LOOP TO ADD PRODUCT CARD DYNAMICALLY
 
 for (var i=0; i < products.length; i++) {
   const productBody = document.querySelector('.product-body')
 
   const div = document.createElement('div')
-  div.className = `col-3 mb-5 mx-5 product-card-div ${products[i].category} hide`
+  div.className = `col-lg-4 col-md-6 col-sm-12 mb-5 product-card-div d-flex justify-content-center ${products[i].category} hide`
   productBody.append(div)
   
 
@@ -17,7 +33,7 @@ for (var i=0; i < products.length; i++) {
   div.append(divClothCard)
 
   const divCard = document.createElement('div')
-  divCard.className = 'card'
+  divCard.className = 'card card-hover'
   divCard.style.width = '18rem'
   divCard.style.borderRadius = '30px'
   divClothCard.append(divCard)
@@ -25,7 +41,7 @@ for (var i=0; i < products.length; i++) {
   const clothImage = document.createElement('img')
   clothImage.className = "card-img-top p-3"
   clothImage.alt = 'cloth image'
-  clothImage.src = '/img/products/f1.jpg'
+  clothImage.src = products[i].image
   clothImage.style.borderRadius = '30px'
   divCard.append(clothImage)
 
@@ -80,15 +96,7 @@ for (var i=0; i < products.length; i++) {
   cardTitleDiv.append(cartButton)
 }
 
-window.onload = function() {
-  let obj = JSON.parse(localStorage.getItem('cartItem'))
-
-  // obj = []
-  // localStorage.setItem('cartItem', JSON.stringify(obj))
-
-  let cartNo = document.querySelector('.cart-value-js')
-  cartNo.innerText = obj.length
-}
+// FUNCTION INVOKED WHEN ADD TO CART BUTTON PRESSED
 
 document.querySelectorAll('.add-button')
   .forEach(button => {
