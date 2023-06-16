@@ -102,7 +102,7 @@ if (orderTotalCost == 0) {
   orderButton.disabled = true;
 }
 else {
-  shipCost.innerText = 70
+  shipCost.innerText = 70;
 }
 
 const shippingTotal = document.querySelector('.shipping-total')
@@ -126,7 +126,7 @@ function orderButtonClicked() {
   disableButton()
 }
 
-// FUNCTIO TO CLOSE THE POP UP BOX
+// FUNCTION TO CLOSE THE POP UP BOX
 
 function popUpClose() {
   let popUp2 = document.querySelector('.pop-js');

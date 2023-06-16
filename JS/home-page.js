@@ -14,7 +14,7 @@ window.onload = function() {
   navButton.classList.add('hide')
 }
 
-// FUNCTION TO SET FORCED LOADING CIRCLE
+// CODE TO SET FORCED LOADING CIRCLE
 
 var preLoader = document.getElementById("preloader");
 setInterval(() => {
