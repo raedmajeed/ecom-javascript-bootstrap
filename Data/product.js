@@ -2,7 +2,7 @@ const products = [
   {
     id: "0001",
     category: "MEN",
-    image: "/img/products/f1.jpg",
+    image: "../img/products/f1.jpg",
     titleName: "Men shirt 1",
     brandName: "Allen Solly",
     rating: {
